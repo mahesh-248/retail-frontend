@@ -1,0 +1,101 @@
+/* Styling for the Basket Analysis Container */
+.basket-analysis-container {
+    padding: 30px;
+    background-color: #f9fafb;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 1100px;
+    margin: auto;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.metrics-container {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.metric {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 45%;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+.metric:hover {
+    background-color: #e1f5fe;
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+.metric strong {
+    color: #333;
+}
+
+.chart-container {
+    margin-top: 30px;
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    height: 500px;
+}
+
+.note {
+    margin-top: 20px;
+    font-size: 1.1rem;
+    color: #666;
+    text-align: center;
+}
+
+/* Home Button Styling */
+.home-btn-container {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.home-btn {
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.home-btn:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .metrics-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .metric {
+        width: 80%;
+    }
+
+    .chart-container {
+        padding: 15px;
+        height: 400px;
+    }
+}

@@ -1,38 +1,879 @@
-.App {
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f7fa;
+  color: #333;
+  margin:0;
+}
+
+/* Upload Page Styles */
+.upload-container {
+  max-width: 800px;
+  margin: 50px auto;
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.upload-content {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.upload-header {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin-bottom: 30px;
+}
+
+.home-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 8px 15px;
+  background-color: #ecf0f1;
+  color: #2c3e50;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.home-btn:hover {
+  background-color: #2980b9;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.upload-header h1 {
+  font-size: 2rem;
+  color: #2c3e50;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.upload-title {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+/* User Sign In / Sign Up Page Styles */
+.user-container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.user-header h1 {
+  font-size: 2rem;
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.user-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* User Info Display on HomePage */
+.user-info {
+  background-color: #f4f7fa;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.user-info h3 {
+  font-size: 1.8rem;
+  color: #2c3e50;
+}
+
+.user-info p {
+  font-size: 1.1rem;
+  color: #7f8c8d;
+}
+
+.input-field {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.submit-btn {
+  padding: 12px 20px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #2980b9;
+}
+
+.success-message {
+  margin-top: 20px;
+  color: green;
+  text-align: center;
+}
+
+.error-message {
+  margin-top: 60px;
+  color: rgb(81, 255, 0);
+  text-align: center;
+}
+
+/* Instructions */
+.upload-instructions {
+  font-size: 1.1rem;
+  color: #7f8c8d;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+/* Upload Form */
+.upload-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.upload-area {
+  margin-bottom: 20px;
+}
+
+.file-input {
+  padding: 12px;
+  font-size: 1.1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 80%;
+  max-width: 500px;
+}
+
+.file-input {
+  padding: 12px;
+  font-size: 1.1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 80%;
+  max-width: 500px;
+}
+
+.upload-btn {
+  padding: 12px 25px;
+  background-color: #27ae60;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: background-color 0.3s ease;
+}
+
+.upload-btn:hover {
+  background-color: #2ecc71;
+}
+
+.upload-content {
+  text-align: center;
+}
+
+/* Loading Message */
+.loading {
+  font-size: 1.2rem;
+  color: #3498db;
+}
+
+/* Status and Error Messages */
+.status-message {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  color: green;
+}
+
+.error-message {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  color: red;
+  background-color: #f8d7da;
+  padding: 10px;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 500px;
+}
+
+/* Navbar Styling */
+.navbar {
+  background-color: #2c3e50;
+  color: white;
+  padding: 20px;
+  display: flex;
+    justify-content: center;
+    /* Center the title horizontally */
+    align-items: center;
+    /* Center the content vertically */
+    height: 80px;
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  align-items: center;
+}
+
+.navbar-brand {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ecf0f1;
+  margin: 0 auto;
+}
+
+/* Home Content */
+.home-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Intro Section */
+.home-intro {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.home-intro h2 {
+  font-size: 2.5rem;
+  color: #2c3e50;
+}
+
+.home-intro p {
+  font-size: 1.2rem;
+  color: #7f8c8d;
+  margin-top: 10px;
+}
+
+/* Action Cards */
+.action-cards {
+  display: flex;
+  
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.action-card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+}
+
+.action-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.action-card h3 {
+  font-size: 1.6rem;
+  color: #34495e;
+}
+
+.action-card p {
+  color: #7f8c8d;
+  margin-top: 10px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 20px;
+  font-size: 1rem;
+  text-decoration: none;
+  color: white;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  margin-top: 20px;
+}
+
+.btn-primary {
+  background-color: #3498db;
+}
+
+.btn-primary:hover {
+  background-color: #2980b9;
+}
+
+.btn-success {
+  background-color: #2ecc71;
+}
+
+.btn-success:hover {
+  background-color: #27ae60;
+}
+
+.btn-secondary {
+  background-color: #f39c12;
+}
+
+.btn-secondary:hover {
+  background-color: #e67e22;
+}
+
+.btn-churn {
+  background-color: #c612f3;
+}
+
+.btn-churn:hover {
+  background-color: #e812f3;
+}
+
+.btn-basket {
+  background-color: #f31273;
+}
+
+.btn-basket:hover {
+  background-color: #f31212;
+}
+
+/* Footer Styling */
+.footer {
+  background-color: #34495e;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 50px;
+  font-size: 1rem;
+}
+
+.dashboard-container {
+  /* width: 90%; */
+  /* max-width: 1200px; */
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header Styles */
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  color: #333;
+}
+
+/* Input Form Styles */
+.input-section {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.input-section form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-section input {
+  padding: 10px;
+  font-size: 1rem;
+  width: 300px;
+  border: 1px solid #ddd;
+  margin-right: 15px;
+  border-radius: 5px;
+}
+
+.input-section button {
+  padding: 12px 25px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.input-section button:hover {
+  background-color: #45a049;
+}
+
+/* Loading and Error States */
+.loading-state,
+.error-state {
+  text-align: center;
+  font-size: 1.2rem;
+  color: green;
+  /* Tomato color for errors */
+  margin-top: 20px;
+}
+
+/* Table Section */
+.table-section {
+  margin-top: 40px;
+}
+
+.table-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 50px;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+th,
+td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #f2f2f2;
+  color: #555;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tr:hover {
+  background-color: #f1f1f1;
+}
+
+td {
+  font-size: 0.95rem;
+}
+
+span {
+  font-size: 0.75rem;
+  color: #888;
+}
+
+/* Hover and sorting indicators */
+th:hover {
+  background-color: #ddd;
+}
+
+th span {
+  margin-left: 5px;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f7fa;
+  color: #333;
+}
+
+/* Container for the entire Dashboard */
+.dashboard-container {
+  /* max-width: 1200px; */
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Header Styling */
+.dashboard-header {
+  text-align: center;
+}
+
+.dashboard-header h1 {
+  font-size: 2.5rem;
+  color: #333;
+  /* margin-bottom: 10px; */
+}
+
+.intro-text {
+  font-size: 1.2rem;
+  color: #555;
+  margin-top: 10px;
+}
+
+/* Content Section Styling */
+.dashboard-content {
+  margin-top: 30px;
+}
+
+.dashboard-section {
+  margin-bottom: 40px;
+}
+
+.dashboard-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+}
+
+/* Chart Container Styling */
+.chart-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+/* Button Styling */
+.search-btn-container {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.search-btn {
+  padding: 12px 25px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  display: inline-block;
+  text-align: center;
+  margin-left: 300px;
+  margin-bottom: 40px;
+}
+
+.search-btn:hover {
+  background-color: #45a049;
+}
+
+/* Make sure charts are responsive */
+.chart-container {
+  width: 100%;
+  /* max-width: 800px; */
+}
+
+/* Make Layout Responsive */
+@media (max-width: 768px) {
+
+  .upload-container {
+    padding: 20px;
+    width: 90%;
   }
-  to {
-    transform: rotate(360deg);
+
+  .upload-title {
+    font-size: 2rem;
   }
+  
+  .upload-header h1 {
+    font-size: 1.6rem;
+  }
+  
+  .upload-instructions {
+    font-size: 1rem;
+  }
+  
+  .file-input {
+    width: 100%;
+    font-size: 1rem;
+  }
+  
+  .upload-btn {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+
+  .dashboard-container {
+    padding: 15px;
+  }
+
+  .dashboard-header h1 {
+    font-size: 2rem;
+  }
+
+  .dashboard-section h2 {
+    font-size: 1.6rem;
+  }
+
+    .navbar-container {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .action-cards {
+      grid-template-columns: 1fr;
+    }
+  
+    .home-intro h2 {
+      font-size: 2rem;
+    }
+  
+    .action-card h3 {
+      font-size: 1.4rem;
+    }
+
+  .search-btn {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.2rem;
+  }
+}
+
+.engagement-over-time-container {
+  /* max-width: 1000px; */
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fff;
+  /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); */
+  border-radius: 10px;
+}
+
+
+.pie-chart-container,
+.bar-chart-container {
+
+  margin: 40px 40px;
+}
+
+.pie-chart-container {
+  flex: 1 1 30%;
+}
+
+.bar-chart-container {
+  flex: 1 1 60%;
+}
+
+.year-selection {
+  margin-bottom: 20px;
+  margin-left: 10px;
+  margin-top: 100px;
+  margin-right: 20px;
+  text-align: center;
+}
+
+select {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  cursor: pointer;
+}
+
+option {
+  font-size: 1rem;
+}
+
+/* Demographics Component Styling */
+.demographics-container {
+  /* max-width: 1000px; */
+  /* margin: 40px auto; */
+  margin-bottom: 40px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.button-group button {
+  margin: 0 10px;
+  background-color: lightblue;
+  border-radius: 4px;
+  color: black;
+  border-color: lightblue;
+  padding: 3px;
+}
+
+.button-group button:hover {
+  background-color: rgb(156, 212, 230);
+}
+
+.axis-btn {
+  padding: 12px 20px;
+  margin: 0 10px;
+  font-size: 1rem;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.axis-btn:hover {
+  background-color: #45a049;
+}
+
+.chart-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 400px;
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .demographics-container {
+    padding: 15px;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+  }
+
+  .axis-btn {
+    font-size: 0.9rem;
+    padding: 10px 18px;
+  }
+
+  .chart-container {
+    height: 300px;
+  }
+}
+
+/* Button Styling for Churn Prediction and Basket Analysis Pages */
+.btn-ml {
+  padding: 10px 25px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+  margin: 20px;
+}
+
+.btn-ml:hover {
+  background-color: #45a049;
+}
+
+/* Hover effect for buttons that were not visible */
+button {
+  visibility: visible;
+}
+
+button:focus {
+  outline: none;
+}
+
+/* Churn Prediction Page Styling */
+.churn-page {
+  text-align: center;
+  padding: 40px;
+}
+
+.churn-page img {
+  margin: 20px auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.churn-page .home-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #4CAF50;
+  color: white;
+  font-size: 16px;
+}
+
+.churn-page .home-btn:hover {
+  background-color: #45a049;
+}
+
+/* Basket Analysis Page Styling */
+.basket-page {
+  text-align: center;
+  padding: 40px;
+}
+
+.basket-page img {
+  margin: 20px auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.basket-page .home-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #4CAF50;
+  color: white;
+  font-size: 16px;
+}
+
+.basket-page .home-btn:hover {
+  background-color: #45a049;
+}
+
+.basket-page .btn-ml {
+  padding: 12px 25px;
+  background-color: #4CAF50;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 20px;
+}
+
+.basket-page .btn-ml:hover {
+  background-color: #45a049;
 }
